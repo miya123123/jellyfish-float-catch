@@ -1,0 +1,74 @@
+[
+  {
+    "id": "moon_glass_jellyfish",
+    "displayName": "ムーングラスくらげ",
+    "kind": "flying",
+    "role": "slow beginner target",
+    "score": 100,
+    "radius": 33,
+    "baseSpeed": 76,
+    "drift": { "mode": "soft_sine", "amplitude": 18, "frequency": 0.85 },
+    "animations": {
+      "fly": {
+        "sprite": "assets/sprites/jellyfish/moon_glass/fly/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 8
+      },
+      "escape": {
+        "sprite": "assets/sprites/jellyfish/moon_glass/escape/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 10
+      }
+    }
+  },
+  {
+    "id": "star_pink_jellyfish",
+    "displayName": "スターピンクくらげ",
+    "kind": "flying",
+    "role": "medium zigzag target",
+    "score": 130,
+    "radius": 31,
+    "baseSpeed": 100,
+    "drift": { "mode": "zigzag", "amplitude": 42, "frequency": 1.35 },
+    "animations": {
+      "fly": {
+        "sprite": "assets/sprites/jellyfish/star_pink/fly/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 9
+      },
+      "escape": {
+        "sprite": "assets/sprites/jellyfish/star_pink/escape/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 10
+      }
+    }
+  },
+  {
+    "id": "mint_comet_jellyfish",
+    "displayName": "ミントコメットくらげ",
+    "kind": "flying",
+    "role": "fast wind target",
+    "score": 170,
+    "radius": 29,
+    "baseSpeed": 136,
+    "drift": { "mode": "wind_lean", "amplitude": 28, "frequency": 1.75 },
+    "animations": {
+      "fly": {
+        "sprite": "assets/sprites/jellyfish/mint_comet/fly/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 10
+      },
+      "escape": {
+        "sprite": "assets/sprites/jellyfish/mint_comet/escape/sheet-transparent.png",
+        "rows": 2,
+        "cols": 2,
+        "fps": 12
+      }
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "level_deepsea_01",
+  "name": "Pastel Deep Sea",
+  "size": { "w": 1280, "h": 720 },
+  "camera": { "mode": "locked", "origin": { "x": 0, "y": 0 } },
+  "background": { "image": "assets/maps/level_deepsea_01/background.png" },
+  "spawnLanes": [
+    { "id": "lane_left", "x": 220 },
+    { "id": "lane_mid_left", "x": 420 },
+    { "id": "lane_center", "x": 640 },
+    { "id": "lane_mid_right", "x": 860 },
+    { "id": "lane_right", "x": 1060 }
+  ],
+  "jellyfishSpawns": [
+    { "timeStart": 0, "timeEnd": 39, "enemyId": "moon_glass_jellyfish", "weight": 4, "interval": 1.18 },
+    { "timeStart": 7, "timeEnd": 39, "enemyId": "star_pink_jellyfish", "weight": 4, "interval": 1.28 },
+    { "timeStart": 16, "timeEnd": 39, "enemyId": "mint_comet_jellyfish", "weight": 3, "interval": 1.42 }
+  ],
+  "windPhases": [
+    { "timeStart": 0, "timeEnd": 7, "label": "calm", "xForce": 0 },
+    { "timeStart": 7, "timeEnd": 14, "label": "strong_left_current", "xForce": -104 },
+    { "timeStart": 14, "timeEnd": 21, "label": "strong_right_current", "xForce": 124 },
+    { "timeStart": 21, "timeEnd": 28, "label": "heavy_left_current", "xForce": -142 },
+    { "timeStart": 28, "timeEnd": 999, "label": "heavy_right_current", "xForce": 158 }
+  ],
+  "catchZone": { "x": 640, "y": 598, "radius": 58 },
+  "escapeZone": { "x": 0, "y": -80, "w": 1280, "h": 80 },
+  "fxEmitters": [
+    { "id": "bubble_split", "type": "burst", "count": 18, "duration": 0.72 },
+    { "id": "jelly_sparkle", "type": "sparkle", "count": 10, "duration": 0.55 }
+  ]
+}

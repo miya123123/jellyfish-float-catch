@@ -1,0 +1,41 @@
+{
+  "id": "player_bubble",
+  "displayName": "ふわふわ泡",
+  "spriteSize": { "w": 96, "h": 96 },
+  "start": { "x": 640, "y": 600 },
+  "movement": {
+    "mode": "smooth_omnidirectional",
+    "minX": 72,
+    "maxX": 1208,
+    "minY": 112,
+    "maxY": 648,
+    "maxSpeed": 760,
+    "keyboardTargetSpeed": 620,
+    "followStrength": 11,
+    "inertiaDamping": 0.84
+  },
+  "collision": {
+    "shape": "circle",
+    "radius": 54
+  },
+  "animations": {
+    "idle": {
+      "sprite": "assets/sprites/player_bubble/idle/sheet-transparent.png",
+      "rows": 2,
+      "cols": 2,
+      "fps": 8
+    },
+    "slide": {
+      "sprite": "assets/sprites/player_bubble/slide/sheet-transparent.png",
+      "rows": 2,
+      "cols": 2,
+      "fps": 10
+    },
+    "capture_split": {
+      "sprite": "assets/sprites/player_bubble/capture_split/sheet-transparent.png",
+      "rows": 2,
+      "cols": 2,
+      "fps": 12
+    }
+  }
+}

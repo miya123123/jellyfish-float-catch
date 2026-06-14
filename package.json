@@ -1,0 +1,12 @@
+{
+  "name": "jellyfish-float-catch",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 5173",
+    "build": "node scripts/build-site.js",
+    "preview": "python3 -m http.server 4173 -d dist",
+    "check": "node --check src/main.js && node --check src/game/state.js && node --check src/game/input.js && node --check src/game/spawning.js && node --check src/game/collision.js && node --check src/game/rendering.js && node --check src/game/audio.js"
+  }
+}

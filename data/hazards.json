@@ -1,0 +1,9 @@
+[
+  {
+    "id": "wind_current",
+    "displayName": "風向き",
+    "damage": 0,
+    "effect": "horizontal_force",
+    "description": "一定時間ごとにくらげの横流れを変える非ダメージ要素"
+  }
+]
