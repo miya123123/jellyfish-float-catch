@@ -185,10 +185,10 @@ function drawHowToPlay(ctx) {
   ctx.textAlign = "center";
   ctx.fillStyle = "#EAFBFF";
   ctx.font = "700 64px system-ui, sans-serif";
-  ctx.fillText("Swipe / Drag to Start", VIEW_W / 2, 250);
+  ctx.fillText("Swipe to Start", VIEW_W / 2, 250);
   ctx.font = "500 27px system-ui, sans-serif";
   ctx.fillStyle = "#6FE7E4";
-  ctx.fillText("ドラッグや上下左右キーで泡を動かし、上昇するくらげを包みます", VIEW_W / 2, 312);
+  ctx.fillText("スワイプや上下左右キーで泡を動かし、上昇するくらげを包みます", VIEW_W / 2, 312);
   ctx.fillStyle = "#EAFBFF";
   ctx.font = "500 23px system-ui, sans-serif";
   ctx.fillText("39秒経過でGame End / 5匹逃すとGame Over", VIEW_W / 2, 360);
