@@ -38,7 +38,7 @@ export function createAudio(state, audioConfig = {}) {
         bgm.loop = audioConfig.bgm.loop !== false;
         bgm.volume = audioConfig.bgm.volume ?? 0.42;
       }
-      if (bgm && !state.muted) {
+      if (bgm && !state.muted && bgm.paused) {
         bgm.play().catch(() => {
           // Browsers may defer playback until the next direct user gesture.
         });

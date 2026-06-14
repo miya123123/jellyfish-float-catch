@@ -1,5 +1,11 @@
 export function installInput(canvas, state, config, audio) {
   const canStart = () => state.mode === "ready" || state.mode === "gameover" || state.mode === "gameend" || state.mode === "clear";
+  const startFromUserGesture = () => {
+    audio.resume();
+    if (canStart()) {
+      config.reset();
+    }
+  };
 
   const clampPointer = () => {
     const move = config.player.movement;
@@ -18,10 +24,7 @@ export function installInput(canvas, state, config, audio) {
 
   canvas.addEventListener("pointerdown", (event) => {
     event.preventDefault();
-    audio.resume();
-    if (canStart()) {
-      config.reset();
-    }
+    startFromUserGesture();
     canvas.setPointerCapture?.(event.pointerId);
     state.pointer.active = true;
     setTarget(event.clientX, event.clientY);
@@ -39,6 +42,27 @@ export function installInput(canvas, state, config, audio) {
     }
   });
 
+  canvas.addEventListener("touchstart", (event) => {
+    const touch = event.changedTouches[0] ?? event.touches[0];
+    if (!touch) return;
+    event.preventDefault();
+    startFromUserGesture();
+    state.pointer.active = true;
+    setTarget(touch.clientX, touch.clientY);
+  }, { passive: false });
+
+  canvas.addEventListener("touchmove", (event) => {
+    const touch = event.changedTouches[0] ?? event.touches[0];
+    if (!touch) return;
+    if (!state.pointer.active && state.mode === "playing") return;
+    event.preventDefault();
+    setTarget(touch.clientX, touch.clientY);
+  }, { passive: false });
+
+  canvas.addEventListener("touchend", () => {
+    state.pointer.active = false;
+  });
+
   window.addEventListener("keydown", (event) => {
     const key = event.key.toLowerCase();
     if (event.key === "ArrowLeft" || key === "a") state.input.left = true;
@@ -46,7 +70,8 @@ export function installInput(canvas, state, config, audio) {
     if (event.key === "ArrowUp" || key === "w") state.input.up = true;
     if (event.key === "ArrowDown" || key === "s") state.input.down = true;
     if (event.key === " " && canStart()) {
-      config.reset();
+      event.preventDefault();
+      startFromUserGesture();
     }
     if (key === "m") {
       audio.setMuted(!state.muted);
